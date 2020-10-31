@@ -5,10 +5,10 @@ from time import sleep
 from datetime import datetime
 
 # MQTT setting
-MQTT_Broker = "192.168.0.102"
+MQTT_Broker = "192.168.1.237"
 MQTT_Port = 1883
 Keep_Alive_Interval = 7200
-MQTT_Topic = 'thean'
+MQTT_Topic = 'hello'
 
 # Callback server
 def on_connect(client, userdata, flags, rc):
