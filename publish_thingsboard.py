@@ -4,7 +4,7 @@ import random
 from datetime import datetime
 from time import sleep
 
-#MQTT settings
+# Thingsboard settings
 THINGSBOARD_HOST = 'localhost'
 THINGSBOARD_PORT = 1883
 THINGSBOARD_TOPIC = 'v1/devices/me/telemetry'
@@ -34,7 +34,7 @@ mqttc.on_disconnect = on_disconnect
 mqttc.on_publish = on_publish
 mqttc.connect(THINGSBOARD_HOST,THINGSBOARD_PORT,Keep_Alive_Interval)
 
-def pb3(jsonData):
+def pub(jsonData):
 	mqttc.publish(THINGSBOARD_TOPIC,jsonData)
 	print("done")
 	
