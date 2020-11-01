@@ -36,5 +36,5 @@ mqttc.connect(THINGSBOARD_HOST,THINGSBOARD_PORT,Keep_Alive_Interval)
 
 def pub(jsonData):
 	mqttc.publish(THINGSBOARD_TOPIC,jsonData)
-	print("done")
+	print(">> publish server!")
 	

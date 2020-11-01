@@ -3,8 +3,8 @@ import json
 import random
 from time import sleep
 from publish_thingsboard import pub
+from save_database import save
 
-#from save_database import save
 # MQTT setting
 MQTT_Broker = "192.168.0.104"
 MQTT_Port = 1883
@@ -18,13 +18,15 @@ def on_connect(client, userdata, flags, rc):
     else:
         print("Connection returned result: " + str(MQTT_Broker))
     client.subscribe(MQTT_Topic, qos = 1)
-    print("Subscribe: ")
 
 # Callback on_message server
 def on_message(client, userdata, msg):
-    print("Message Recieved: "+msg.payload.decode())
+    print("Subscribe Message Recieved: "+msg.payload.decode())
+    
+    save(msg.payload.decode()) #save database
+
     pub(msg.payload)
-    #save(msg.payload) #save database
+    
     #mosquitto_pub -d -t hello -m "{\"Area\":\"xuanthuy\",\"STT\":1,\"Temperature\":4,\"Humidity\":45}"
 
 client = mqtt.Client()

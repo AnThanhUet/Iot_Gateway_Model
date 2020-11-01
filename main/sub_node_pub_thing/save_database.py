@@ -2,11 +2,10 @@ import pymysql
 import json
 from datetime import datetime
 
-def save(jsonData):
+def save(data):
         
-	json_Dict = json.loads(jsonData)
-	print(jsonData)
-	
+	json_Dict = json.loads(data)
+	#print(data)
 
 	Area = json_Dict['Area']
 
@@ -20,7 +19,7 @@ def save(jsonData):
 	cursor = db.cursor()
 	
 	cursor.execute("INSERT INTO sensors(Area, STT, Temperature, Humidity) VALUES(%s,%s,%s,%s)",(Area,STT,Temperature,Humidity))
-	print("SAVE DATABASE uet - TABLES sensors!")
+	print(">> save database uet - table sensors!")
 	db.commit()
 	db.close()
 
