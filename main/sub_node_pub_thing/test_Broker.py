@@ -4,10 +4,8 @@ import sys
 import paho.mqtt.client as mqtt
 import json
 import random
-THINGSBOARD_HOST = 'localhost'
-ACCESS_TOKEN = 'hR5aYLkhasr5PYq9tiaZ'
-THINGSBOARD_TOPIC = 'v1/devices/me/telemetry'
 
+# Seting broker
 BROKER_HOST = '192.168.0.104'
 BROKER_TOPIC = 'hello'
 # Data capture and upload interval in seconds. Less interval will eventually hang the DHT22.
