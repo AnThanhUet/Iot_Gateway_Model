@@ -6,7 +6,7 @@ from publish_thingsboard import pub
 from save_database import save
 
 # MQTT setting
-MQTT_Broker = "192.168.0.104"
+MQTT_Broker = "172.20.10.7"
 MQTT_Port = 1883
 Keep_Alive_Interval = 7200
 MQTT_Topic = 'hello'
@@ -22,12 +22,9 @@ def on_connect(client, userdata, flags, rc):
 # Callback on_message server
 def on_message(client, userdata, msg):
     print("Subscribe Message Recieved: "+msg.payload.decode())
-    
-    save(msg.payload.decode()) #save database
-
     pub(msg.payload)
-    
-    #mosquitto_pub -d -t hello -m "{\"Area\":\"xuanthuy\",\"STT\":1,\"Temperature\":4,\"Humidity\":45}"
+    save(msg.payload.decode()) #save database
+    #mosquitto_pub -d -t hello -m "{\"Area\":\"xuanthuy\",\"ID\":1,\"Temperature\":4,\"Humidity\":45}"
 
 client = mqtt.Client()
 client.on_connect = on_connect
