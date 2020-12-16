@@ -5,7 +5,7 @@ import paho.mqtt.client as mqtt
 import json
 import random
 # Seting broker
-BROKER_HOST = '172.20.10.7'
+BROKER_HOST = '192.168.0.103'
 BROKER_TOPIC = 'hello'
 # Data capture and upload interval in seconds. Less interval will eventually hang the DHT22.
 INTERVAL=2
