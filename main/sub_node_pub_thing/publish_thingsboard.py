@@ -4,7 +4,7 @@ import random
 from datetime import datetime
 from time import sleep
 # Thingsboard settings
-THINGSBOARD_HOST = 'localhost'
+THINGSBOARD_HOST = '192.168.137.32' #'localhost'
 THINGSBOARD_PORT = 1883
 THINGSBOARD_TOPIC = 'v1/devices/me/telemetry'
 ACCESS_TOKEN = 'hR5aYLkhasr5PYq9tiaZ'

@@ -6,7 +6,7 @@ from publish_thingsboard import pub
 from save_database import save
 
 # MQTT setting
-MQTT_Broker = "192.168.0.103"
+MQTT_Broker = "192.168.137.136"
 MQTT_Port = 1883
 Keep_Alive_Interval = 7200
 MQTT_Topic = 'hello'
